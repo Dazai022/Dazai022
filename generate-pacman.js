@@ -35,11 +35,22 @@ function serpentineCoords(i) {
 
 function buildTrackPath(n) {
   let d = "";
+  const points = [];
   for (let i = 0; i < n; i++) {
     const { cx, cy } = serpentineCoords(i);
+    points.push({ cx, cy });
     d += (i === 0 ? `M ${cx} ${cy}` : ` L ${cx} ${cy}`);
   }
-  return d;
+  // cumulative arc length up to each vertex, for exact keyPoints mapping
+  const cum = [0];
+  for (let i = 1; i < points.length; i++) {
+    const dx = points[i].cx - points[i - 1].cx;
+    const dy = points[i].cy - points[i - 1].cy;
+    cum.push(cum[i - 1] + Math.sqrt(dx * dx + dy * dy));
+  }
+  const total = cum[cum.length - 1];
+  const keyPoints = cum.map((c) => (c / total).toFixed(5));
+  return { d, keyPoints };
 }
 
 async function main() {
@@ -53,7 +64,11 @@ async function main() {
   while (days.length < CELLS) days.unshift({ count: 0 });
 
   const total = days.reduce((s, d) => s + (d.count || 0), 0);
-  const track = buildTrackPath(CELLS);
+  const { d: track, keyPoints } = buildTrackPath(CELLS);
+
+  const keyTimes = days.map((_, i) => (i * STEP / LOOP_SECONDS).toFixed(5));
+  const keyTimesAttr = keyTimes.join(';');
+  const keyPointsAttr = keyPoints.join(';');
 
   const fruitColors = ["#E24B4A", "#F2C230", "#3FA34D", "#E27A3F"];
   let dots = "";
@@ -108,7 +123,8 @@ ${dots}
         values="${rotValues.join(';')}" keyTimes="${rotKeyTimes.join(';')}"
         calcMode="discrete" dur="${LOOP_SECONDS}s" repeatCount="indefinite"/>
     </g>
-    <animateMotion dur="${LOOP_SECONDS}s" repeatCount="indefinite">
+    <animateMotion dur="${LOOP_SECONDS}s" repeatCount="indefinite"
+      keyTimes="${keyTimesAttr}" keyPoints="${keyPointsAttr}" calcMode="linear">
       <mpath href="#track"/>
     </animateMotion>
   </g>
@@ -116,7 +132,8 @@ ${dots}
     <path d="M -7,8 Q -7,-8 0,-8 Q 7,-8 7,8 L 4,4 L 0,8 L -4,4 Z" fill="#E24B4A"/>
     <circle cx="-2.6" cy="-2" r="1.6" fill="#0d1117"/>
     <circle cx="2.6" cy="-2" r="1.6" fill="#0d1117"/>
-    <animateMotion dur="${LOOP_SECONDS}s" repeatCount="indefinite" begin="-1.3s">
+    <animateMotion dur="${LOOP_SECONDS}s" repeatCount="indefinite" begin="1.3s"
+      keyTimes="${keyTimesAttr}" keyPoints="${keyPointsAttr}" calcMode="linear">
       <mpath href="#track"/>
     </animateMotion>
   </g>
