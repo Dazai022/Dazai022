@@ -55,17 +55,21 @@ async function main() {
   const total = days.reduce((s, d) => s + (d.count || 0), 0);
   const track = buildTrackPath(CELLS);
 
+  const fruitColors = ["#E24B4A", "#F2C230", "#3FA34D", "#E27A3F"];
   let dots = "";
   days.forEach((day, i) => {
     const { cx, cy } = serpentineCoords(i);
     const active = (day.count || 0) > 0;
     const t = (i * STEP).toFixed(3);
     if (active) {
+      const color = fruitColors[i % fruitColors.length];
       dots += `
-  <circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="3.4" fill="#F2C230">
-    <animate attributeName="opacity" values="1;0.18" keyTimes="0;0.05"
+  <g>
+    <animate attributeName="opacity" values="1;0" keyTimes="0;0.06"
       begin="${t}s" dur="${LOOP_SECONDS}s" repeatCount="indefinite" fill="freeze"/>
-  </circle>`;
+    <line x1="${cx.toFixed(1)}" y1="${(cy - 3.6).toFixed(1)}" x2="${(cx + 1.4).toFixed(1)}" y2="${(cy - 5.2).toFixed(1)}" stroke="#3FA34D" stroke-width="1"/>
+    <circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="3.2" fill="${color}"/>
+  </g>`;
     } else {
       dots += `
   <circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="2" fill="#3a3f4b"/>`;
@@ -79,27 +83,23 @@ async function main() {
   <path id="track" d="${track}" fill="none" stroke="none"/>
 ${dots}
   <g>
-    <path id="mouth" d="M -8,0 L 8,0 L 8,0 Z" fill="#0d1117">
-      <animate attributeName="d"
-        values="M -8,-8 L 8,0 L -8,8 Z;M -8,-2 L 8,0 L -8,2 Z;M -8,-8 L 8,0 L -8,8 Z"
-        dur="0.3s" repeatCount="indefinite"/>
-    </path>
     <circle cx="0" cy="0" r="8" fill="#F2C230"/>
-    <path d="M -8,-8 L 8,0 L -8,8 Z" fill="#0d1117">
+    <path d="M 0,0 L 8,0 L 8,0 Z" fill="#0d1117">
       <animate attributeName="d"
-        values="M -8,-8 L 8,0 L -8,8 Z;M -8,-2 L 8,0 L -8,2 Z;M -8,-8 L 8,0 L -8,8 Z"
+        values="M 0,0 L 8,-1 L 8,1 Z;M 0,0 L 8,-6 L 8,6 Z;M 0,0 L 8,-1 L 8,1 Z"
         dur="0.3s" repeatCount="indefinite"/>
     </path>
     <animateMotion dur="${LOOP_SECONDS}s" repeatCount="indefinite" rotate="auto">
       <mpath href="#track"/>
     </animateMotion>
   </g>
-  <g opacity="0.85">
-    <path d="M -7,8 Q -7,-8 0,-8 Q 7,-8 7,8 L 4,4 L 0,8 L -4,4 Z" fill="#E24B4A">
-      <animateMotion dur="${LOOP_SECONDS}s" repeatCount="indefinite" begin="-1.1s" rotate="auto">
-        <mpath href="#track"/>
-      </animateMotion>
-    </path>
+  <g opacity="0.9">
+    <path d="M -7,8 Q -7,-8 0,-8 Q 7,-8 7,8 L 4,4 L 0,8 L -4,4 Z" fill="#E24B4A"/>
+    <circle cx="-2.6" cy="-2" r="1.6" fill="#0d1117"/>
+    <circle cx="2.6" cy="-2" r="1.6" fill="#0d1117"/>
+    <animateMotion dur="${LOOP_SECONDS}s" repeatCount="indefinite" begin="-1.3s">
+      <mpath href="#track"/>
+    </animateMotion>
   </g>
 </svg>`;
 
