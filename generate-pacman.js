@@ -76,6 +76,20 @@ async function main() {
     }
   });
 
+  // Deterministic mouth orientation: instead of relying on rotate="auto"
+  // (whose sign convention varies by renderer), explicitly flip 180deg
+  // per row based on our own known serpentine direction.
+  const rowDuration = COLS * STEP;
+  const rotValues = [];
+  const rotKeyTimes = [];
+  for (let r = 0; r < ROWS; r++) {
+    const angle = r % 2 === 0 ? 0 : 180;
+    rotValues.push(angle);
+    rotKeyTimes.push(((r * rowDuration) / LOOP_SECONDS).toFixed(4));
+  }
+  rotValues.push(rotValues[rotValues.length - 1]);
+  rotKeyTimes.push("1");
+
   const svg = `<svg width="900" height="230" viewBox="0 0 900 230" xmlns="http://www.w3.org/2000/svg">
   <rect width="900" height="230" fill="#0d1117" rx="10"/>
   <text x="30" y="34" font-family="monospace" font-size="14" fill="#8b949e">ACTIVITY</text>
@@ -83,13 +97,18 @@ async function main() {
   <path id="track" d="${track}" fill="none" stroke="none"/>
 ${dots}
   <g>
-    <circle cx="0" cy="0" r="8" fill="#F2C230"/>
-    <path d="M 0,0 L 8,0 L 8,0 Z" fill="#0d1117">
-      <animate attributeName="d"
-        values="M 0,0 L 8,-1 L 8,1 Z;M 0,0 L 8,-6 L 8,6 Z;M 0,0 L 8,-1 L 8,1 Z"
-        dur="0.3s" repeatCount="indefinite"/>
-    </path>
-    <animateMotion dur="${LOOP_SECONDS}s" repeatCount="indefinite" rotate="auto">
+    <g>
+      <circle cx="0" cy="0" r="8" fill="#F2C230"/>
+      <path d="M 0,0 L 8,0 L 8,0 Z" fill="#0d1117">
+        <animate attributeName="d"
+          values="M 0,0 L 8,-1 L 8,1 Z;M 0,0 L 8,-6 L 8,6 Z;M 0,0 L 8,-1 L 8,1 Z"
+          dur="0.3s" repeatCount="indefinite"/>
+      </path>
+      <animateTransform attributeName="transform" type="rotate"
+        values="${rotValues.join(';')}" keyTimes="${rotKeyTimes.join(';')}"
+        calcMode="discrete" dur="${LOOP_SECONDS}s" repeatCount="indefinite"/>
+    </g>
+    <animateMotion dur="${LOOP_SECONDS}s" repeatCount="indefinite">
       <mpath href="#track"/>
     </animateMotion>
   </g>
