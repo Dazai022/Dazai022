@@ -1,34 +1,43 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B1F3A,100:0F8B8D&height=200&section=header&text=Rishit%20Gurram&fontSize=48&fontColor=FFFFFF&animation=fadeIn&fontAlignY=38&desc=Cybersecurity%20Engineer%20%C2%B7%20Building%20Secure,%20Intelligent%20Systems&descAlignY=58&descSize=18" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B1F3A,50:11406B,100:0F8B8D&height=210&section=header&text=Rishit%20Gurram&fontSize=46&fontColor=FFFFFF&animation=fadeIn&fontAlignY=36&desc=Cybersecurity%20Engineer%20·%20Building%20Secure,%20Intelligent%20Systems&descAlignY=54&descSize=16" width="100%"/>
 
-<a href="https://www.linkedin.com/in/rishit-gurram-5018ab26b/">
-  <img src="https://img.shields.io/badge/LinkedIn-0B1F3A?style=for-the-badge&logo=linkedin&logoColor=0F8B8D" />
-</a>
-<a href="mailto:Rishitgv06@gmail.com">
-  <img src="https://img.shields.io/badge/Email-0B1F3A?style=for-the-badge&logo=gmail&logoColor=0F8B8D" />
-</a>
+<img src="https://readme-typing-svg.demolab.com?font=Georgia&weight=600&size=20&duration=3000&pause=1200&color=0F8B8D&center=true&vCenter=true&width=600&lines=B.Tech+Cybersecurity+%40+Woxsen+University;Building+Hybrid+IDS%2FIPS+%26+Secure+Backends;Exploring+Agentic+AI+%2B+LLM+Security" />
 
-<br/><br/>
+<br/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Georgia&weight=600&size=22&duration=3000&pause=1000&color=0F8B8D&center=true&vCenter=true&width=650&lines=B.Tech+Cybersecurity+%40+Woxsen+University;Building+Hybrid+IDS%2FIPS+%26+Secure+Backends;Exploring+Agentic+AI+%2B+LLM+Security+Research;Always+shipping+%E2%80%94+always+securing" />
+<a href="https://www.linkedin.com/in/rishit-gurram-5018ab26b/"><img src="https://img.shields.io/badge/LinkedIn-0B1F3A?style=for-the-badge&logo=linkedin&logoColor=0F8B8D" /></a>
+<a href="mailto:Rishitgv06@gmail.com"><img src="https://img.shields.io/badge/Email-0B1F3A?style=for-the-badge&logo=gmail&logoColor=0F8B8D" /></a>
+<a href="https://github.com/Dazai022"><img src="https://img.shields.io/badge/GitHub-0B1F3A?style=for-the-badge&logo=github&logoColor=0F8B8D" /></a>
 
 </div>
 
 <br/>
 
-## About Me
-
-I'm a Cybersecurity undergrad (Gold Medalist, GPA 8.6/10) building projects at the intersection of **network security, secure backend engineering, and applied AI**. Currently deep in intrusion detection systems, encrypted communication platforms, and LLM security research.
-
-- 🔐 Focused on: Network Security · Threat Modeling (STRIDE) · Secure Backend Design
-- 🤖 Exploring: Agentic AI · RAG · LangChain/LangGraph · LLM Security
-- 🏆 Gold Medal — Highest GPA, Woxsen University
-- 🎯 Currently looking for cybersecurity / software engineering internships
+<table width="100%">
+<tr>
+<td width="25%" align="center">🥇<br/><b>Gold Medalist</b><br/><sub>Highest GPA, Yr 1</sub></td>
+<td width="25%" align="center">📊<br/><b>8.6 / 10</b><br/><sub>GPA</sub></td>
+<td width="25%" align="center">🎓<br/><b>Woxsen University</b><br/><sub>B.Tech Cybersecurity, 2024–28</sub></td>
+<td width="25%" align="center">📍<br/><b>Bengaluru, India</b><br/><sub>Open to internships</sub></td>
+</tr>
+</table>
 
 <br/>
 
-## Tech Stack
+## `01` About
+
+I build at the intersection of **network security, secure backend engineering, and applied AI** — currently deep in intrusion detection systems, encrypted communication platforms, and LLM security research.
+
+```
+> focus        network security · threat modeling (STRIDE) · secure backend design
+> exploring    agentic AI · RAG · LangChain / LangGraph · LLM security
+> looking for  cybersecurity & software engineering internships
+```
+
+<br/>
+
+## `02` Tech Stack
 
 <div align="center">
 
@@ -38,48 +47,18 @@ I'm a Cybersecurity undergrad (Gold Medalist, GPA 8.6/10) building projects at t
 
 <br/>
 
-**Security & Networking:** Wireshark · Snort · OWASP · Cryptography · Authentication · Vulnerability Assessment
-**AI / Agentic Systems:** Agentic AI · RAG Pipelines · Vector Databases (FAISS/Pinecone) · LangChain / LangGraph · LLM Security
-
-<br/>
-
-## Featured Projects
-
-<table>
+<table width="100%">
 <tr>
 <td width="50%" valign="top">
 
-### 🛡️ [NetShield IDS/IPS](https://github.com/Dazai022/Netshield-IDS)
-Hybrid signature + anomaly detection engine combining Snort rules with custom Python statistical models. Real-time Flask dashboard with live alerts, attack analytics, and automated IPS blocking.
-
-`Python` `Snort` `Flask` `Network Security`
+**Security & Networking**
+`Network Security` `Cryptography` `Authentication` `Threat Modeling` `OWASP` `STRIDE` `Wireshark` `Snort`
 
 </td>
 <td width="50%" valign="top">
 
-### 🔒 [Secure Peer Support Network](https://github.com/Dazai022/Secure-peer-support-network)
-End-to-end encrypted messaging platform with Zero-Knowledge selective-disclosure proofs for anonymous, verifiable credentials. STRIDE threat-modeled.
-📍 [Live Demo](https://secure-peer-support-network.vercel.app/)
-
-`Next.js` `AES-GCM` `ECDH` `Zero-Knowledge Proofs`
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### 🗳️ [Blockchain E-Voting](https://github.com/Dazai022/e-voting-system)
-Tamper-proof voting system using smart contracts for cryptographic voter anonymity, verifiable-credential MFA, and a fully auditable, immutable ledger.
-
-`Blockchain` `Smart Contracts` `Cryptography`
-
-</td>
-<td width="50%" valign="top">
-
-### 🤖 LLM Security Research *(Ongoing)*
-Two active research projects: a **Prompt Injection Simulator** cataloguing attack patterns against agentic LLM deployments, and an **LLM Data Leakage Detector** classifying PII/confidential-context leakage in inference outputs.
-
-`LLM Security` `NLP` `RAG`
+**AI / Agentic Systems**
+`Agentic AI` `RAG` `Vector DBs (FAISS/Pinecone)` `LangChain/LangGraph` `LLM Security`
 
 </td>
 </tr>
@@ -87,14 +66,58 @@ Two active research projects: a **Prompt Injection Simulator** cataloguing attac
 
 <br/>
 
-## GitHub Stats
+## `03` Featured Projects
+
+<table width="100%">
+<tr>
+<td width="50%" valign="top">
+<h3>🛡️ <a href="https://github.com/Dazai022/Netshield-IDS">NetShield IDS/IPS</a></h3>
+<i>Hybrid Network Threat Detection & Prevention</i>
+<br/><br/>
+Hybrid signature + anomaly detection combining Snort rules with custom Python statistical models. Real-time Flask dashboard with live alerts, attack analytics, and automated IPS blocking.
+<br/><br/>
+<code>Python</code> <code>Snort</code> <code>Flask</code> <code>Network Security</code>
+</td>
+<td width="50%" valign="top">
+<h3>🔒 <a href="https://github.com/Dazai022/Secure-peer-support-network">Secure Peer Support Network</a></h3>
+<i>Zero-Knowledge, End-to-End Encrypted Messaging</i>
+<br/><br/>
+E2E encrypted peer messaging with Zero-Knowledge selective-disclosure proofs for anonymous, verifiable credentials. STRIDE threat-modeled.
+<br/><br/>
+📍 <a href="https://secure-peer-support-network.vercel.app/">Live Demo</a>
+<br/><br/>
+<code>Next.js</code> <code>AES-GCM</code> <code>ECDH</code> <code>ZK Proofs</code>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<h3>🗳️ <a href="https://github.com/Dazai022/e-voting-system">Blockchain E-Voting</a></h3>
+<i>Tamper-Proof, Verifiable-Credential MFA Voting</i>
+<br/><br/>
+Smart-contract voting with cryptographic voter anonymity, verifiable-credential MFA, and a fully auditable, immutable ledger.
+<br/><br/>
+<code>Blockchain</code> <code>Smart Contracts</code> <code>Cryptography</code>
+</td>
+<td width="50%" valign="top">
+<h3>🤖 LLM Security Research</h3>
+<i>Ongoing · Prompt Injection Simulator + Data Leakage Detector</i>
+<br/><br/>
+Cataloguing prompt injection patterns against agentic LLM deployments, and an NLP classifier detecting PII/confidential-context leakage in inference outputs.
+<br/><br/>
+<code>LLM Security</code> <code>NLP</code> <code>RAG</code>
+</td>
+</tr>
+</table>
+
+<br/>
+
+## `04` Activity
 
 <div align="center">
 
-<img height="165em" src="https://github-readme-stats.vercel.app/api?username=Dazai022&show_icons=true&title_color=0F8B8D&icon_color=0F8B8D&text_color=333333&bg_color=FFFFFF&border_color=0B1F3A&hide_border=false&count_private=true" />
-<img height="165em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dazai022&layout=compact&title_color=0F8B8D&text_color=333333&bg_color=FFFFFF&border_color=0B1F3A&hide_border=false" />
+<img src="https://raw.githubusercontent.com/Dazai022/Dazai022/output/pacman.svg" width="100%"/>
 
-<br/>
+<br/><br/>
 
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=Dazai022&theme=default&hide_border=false&background=FFFFFF&stroke=0B1F3A&ring=0F8B8D&fire=0F8B8D&currStreakLabel=0F8B8D&sideLabels=333333&currStreakNum=0B1F3A&sideNums=0B1F3A&dates=333333" />
 
@@ -104,16 +127,6 @@ Two active research projects: a **Prompt Injection Simulator** cataloguing attac
 
 <div align="center">
 
-<!--PACMAN_SECTION:START-->
-<img src="https://raw.githubusercontent.com/Dazai022/Dazai022/output/pacman.svg" width="100%"/>
-<!--PACMAN_SECTION:END-->
-
-</div>
-
-<br/>
-
-<div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F8B8D,100:0B1F3A&height=100&section=footer" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F8B8D,50:11406B,100:0B1F3A&height=110&section=footer" width="100%"/>
 
 </div>
